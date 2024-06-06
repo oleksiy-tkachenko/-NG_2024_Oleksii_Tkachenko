@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
 
+build
+
+*.txt
+*.txt.user
+
 # Compiled Object files
 *.slo
 *.lo

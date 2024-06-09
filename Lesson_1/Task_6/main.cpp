@@ -7,17 +7,7 @@ int main()
     int size;
     cout << "Enter size of the tree: ";
     cin >> size;
-    for (int row = 0; row < size+1; row++){
-        if(row == size){ // if last row
-            for (int index = 0; index < size; index++) {
-                if(index == size-1){
-                    cout << "*\n";
-                } else {
-                    cout << " ";
-                }
-            }
-            break;
-        }
+    for (int row = 0; row < size; row++){
         for (int index = 0; index < row+size; index++) {
             if(index > size-(row-2)){
                 cout << "*";
@@ -26,6 +16,13 @@ int main()
             }
         }
         cout << endl;
+    }
+    for (int index = 0; index < size; index++) {
+        if(index == size-1){
+            cout << "*\n";
+        } else {
+            cout << " ";
+        }
     }
     system("pause");
 }

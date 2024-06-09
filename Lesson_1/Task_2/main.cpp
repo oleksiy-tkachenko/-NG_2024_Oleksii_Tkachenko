@@ -4,10 +4,9 @@ using namespace std;
 
 int main()
 {
-    double a,b;
+    double number1 , number2;
     cout << "Calculator\n\nEnter two numbers to add, separating them either by pressing enter or spacebar\n";
-    cin >> a >> b;
-    cout << a+b << endl;
+    cin >> number1 >> number2;
+    cout << number1 + number2 << endl;
     system("pause");
-    return 0;
 }

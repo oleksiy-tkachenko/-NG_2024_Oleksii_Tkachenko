@@ -10,8 +10,8 @@ int main()
     if(income < 1000){
         cout << "You need to work harder.";
     }
-    if(income > 1000-1){
-        if (income > 1000000-1){
+    if(income > 999){
+        if (income > 999999){
             cout << " Wow, you are a millionaire!";
         }
         if(income < 1000000){

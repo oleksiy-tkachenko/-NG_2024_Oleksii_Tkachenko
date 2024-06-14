@@ -7,8 +7,8 @@ int main()
     string wordCheckString;
     cout << "Enter string to check for words:" << endl;
     getline(cin, wordCheckString);
-    if(wordCheckString == "") {
-        cout << "You need to enter something!" << endl;
+    if(wordCheckString == "" || wordCheckString[0] == ' ') {
+        cout << "You can't start from nothing or space." << endl;
         system("pause");
         return 1;
     }

@@ -9,7 +9,7 @@ int main()
     for (int column = 0; column < 5; column++) {
         cout << "Enter amount in column " << column << ": ";
         cin >> columns[column];
-        if(columns[column] > maxNumber){
+        if(columns[column] > maxNumber) {
             maxNumber = columns[column];
         }
     }

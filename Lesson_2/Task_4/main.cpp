@@ -15,12 +15,12 @@ int main()
 
     int wordCount = 1;
     bool isPreviousSpace = false;
-    for(int i = 0; wordCheckString[i] != 0; i++) {
-        if(wordCheckString[i] == ' ' && !isPreviousSpace) {
-            wordCount++;
+    for(int i_symbol = 0; wordCheckString[i_symbol] != 0; i_symbol++) {
+        if(wordCheckString[i_symbol] == ' ' && !isPreviousSpace) {
             isPreviousSpace = true;
-        } else if(wordCheckString[i] != ' ' && isPreviousSpace) {
+        } else if(wordCheckString[i_symbol] != ' ' && isPreviousSpace) {
             isPreviousSpace = false;
+            wordCount++;
         }
     }
     cout << "Word count of your string is " << wordCount << endl;

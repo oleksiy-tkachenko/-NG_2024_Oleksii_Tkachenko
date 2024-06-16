@@ -8,12 +8,12 @@ int main()
     // Initialization of bank for no unexpected behaviour
     float bank[10];
     cout << fixed << setprecision(2);
-    for(int i = 0;i<10;i++){
-        bank[i] = i*20;
+    for(int i_number_of_bank_account = 0;i_number_of_bank_account<10;i_number_of_bank_account++){
+        bank[i_number_of_bank_account] = i_number_of_bank_account*20;
     }
 
     // Asking input for number of bank account
-    int number_of_bank_account; // amount of money
+    int number_of_bank_account;
     cout << "Enter the desired bank account number(1-10): ";
     cin >> number_of_bank_account;
 
@@ -79,11 +79,11 @@ int main()
         case 'm': {
             float min_balance = bank[0];
             float max_balance = bank[0];
-            for(int i = 1;i<10;i++){
-                if(bank[i] < min_balance){
-                    min_balance = bank[i];
-                } else if(bank[i] > max_balance){
-                    max_balance = bank[i];
+            for(int i_number_of_bank_account = 1; i_number_of_bank_account<10; i_number_of_bank_account++){
+                if(bank[i_number_of_bank_account] < min_balance){
+                    min_balance = bank[i_number_of_bank_account];
+                } else if(bank[i_number_of_bank_account] > max_balance){
+                    max_balance = bank[i_number_of_bank_account];
                 }
             }
             cout << "Your maximum balance is " << max_balance
@@ -94,8 +94,8 @@ int main()
         // Sum of all bank account's balances
         case 's':
             float full_balance;
-            for(int i = 0;i<10;i++){
-                full_balance += bank[i];
+            for(int i_number_of_bank_account = 0; i_number_of_bank_account<10; i_number_of_bank_account++){
+                full_balance += bank[i_number_of_bank_account];
             }
             cout << "Sum of all bank account's balances is: " << full_balance << endl;
             break;

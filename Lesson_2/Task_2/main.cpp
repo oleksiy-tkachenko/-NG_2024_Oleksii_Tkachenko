@@ -7,32 +7,24 @@ int main()
     int sizes[20];
     int maxSize = 0;
     int stopIndex = 19;
-    for(int i = 0; i<20; i++) {
-        cout << "Enter size of the section(0 to stop): ";
-        cin >> sizes[i];
-        if(sizes[i] > maxSize) {
-            maxSize = sizes[i];
-        } else if(sizes[i] == 0) {
-            stopIndex = i;
+    for(int i_row = 0; i_row<20; i_row++) {
+        cout << "Enter size of the section(enter only odd numbers, 0 to stop): ";
+        cin >> sizes[i_row];
+        if(sizes[i_row] > maxSize) {
+            maxSize = sizes[i_row];
+        }
+        if(sizes[i_row] % 2 == 0) {
+            stopIndex = i_row;
             break;
         }
     }
 
-    if(maxSize % 2 == 0) {
-        maxSize++;
-    }
-
-    for (int row = 0; row < stopIndex; row++) {
-        for (int index = 0; index < (maxSize - sizes[row]) / 2.0 + sizes[row]; index++) {
-            if(index >= (maxSize - sizes[row]) / 2){
-                if(sizes[row] % 2 == 0 && maxSize / 2 == index) {
-                    cout << " ";
-                    continue;
-                }
-                cout << "*";
-            } else {
-                cout << " ";
-            }
+    for (int i_row = 0; i_row < stopIndex; i_row++) {
+        for (int i_index = 0; i_index < (maxSize - sizes[i_row]) / 2.0; i_index++) {
+            cout << " ";
+        }
+        for (int i_index = (maxSize - sizes[i_row]) / 2.0; i_index < (maxSize - sizes[i_row]) / 2.0 + sizes[i_row]; i_index++) {
+            cout << "*";
         }
         cout << endl;
     }

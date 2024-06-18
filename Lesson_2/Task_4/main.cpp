@@ -7,22 +7,18 @@ int main()
     string wordCheckString;
     cout << "Enter string to check for words:" << endl;
     getline(cin, wordCheckString);
-    if(wordCheckString == "" || wordCheckString[0] == ' ') {
-        cout << "You can't start from nothing or space." << endl;
-        system("pause");
-        return 1;
-    }
 
-    int wordCount = 1;
-    bool isPreviousSpace = false;
-    for(int i_symbol = 0; wordCheckString[i_symbol] != 0; i_symbol++) {
-        if(wordCheckString[i_symbol] == ' ' && !isPreviousSpace) {
-            isPreviousSpace = true;
-        } else if(wordCheckString[i_symbol] != ' ' && isPreviousSpace) {
-            isPreviousSpace = false;
+    int wordCount, currentWordIndex = 0;
+    for(int currentWordIndex= 0, nextWordIndex =  1; wordCheckString[currentWordIndex]; currentWordIndex++, nextWordIndex++){
+        bool isCurrentLetter = wordCheckString[currentWordIndex] >= 65 && wordCheckString[currentWordIndex]<= 90
+                        || wordCheckString[currentWordIndex] >= 97 && wordCheckString[currentWordIndex]<= 122;
+        bool isNextLetter = wordCheckString[nextWordIndex] >= 65 && wordCheckString[nextWordIndex]<= 90
+                               || wordCheckString[nextWordIndex] >= 97 && wordCheckString[nextWordIndex]<= 122;
+        if(isCurrentLetter && !isNextLetter){
             wordCount++;
         }
     }
+
     cout << "Word count of your string is " << wordCount << endl;
     system("pause");
 }

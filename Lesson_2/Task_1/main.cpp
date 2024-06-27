@@ -5,11 +5,12 @@ using namespace std;
 
 int main()
 {
+    // i_ means iterable variable
     // Initialization of bank for no unexpected behaviour
     float bank[10];
     cout << fixed << setprecision(2);
-    for(int i_number_of_bank_account = 0;i_number_of_bank_account<10;i_number_of_bank_account++){
-        bank[i_number_of_bank_account] = i_number_of_bank_account*20;
+    for(int i_number_of_bank_account = 0; i_number_of_bank_account < 10; i_number_of_bank_account++){
+        bank[i_number_of_bank_account] = i_number_of_bank_account * 20;
     }
 
     // Asking input for number of bank account
@@ -29,7 +30,7 @@ int main()
         // Check balance
         case 'c':
             cout << "Your current balance on bank account " << number_of_bank_account
-                 << " is: " << bank[number_of_bank_account-1] << endl;
+                 << " is: " << bank[number_of_bank_account - 1] << endl;
             break;
 
         // Deposit
@@ -52,14 +53,14 @@ int main()
             float withdrawal_money_amount;
             cout << "How much money do you want to withdraw?" << endl;
             cin >> withdrawal_money_amount;
-            if(withdrawal_money_amount < 0 || withdrawal_money_amount > bank[number_of_bank_account-1]){
+            if(withdrawal_money_amount < 0 || withdrawal_money_amount > bank[number_of_bank_account - 1]){
                 cout << "You can't withdraw negative sum of money or more than balance amount, sorry for the inconvinience." << endl;
                 break;
             }
-            bank[number_of_bank_account-1] -= withdrawal_money_amount;
+            bank[number_of_bank_account - 1] -= withdrawal_money_amount;
             cout << "Operation successful, your current balance on bank account "
                  << number_of_bank_account << " is: "
-                 << bank[number_of_bank_account-1] << endl;
+                 << bank[number_of_bank_account - 1] << endl;
             break;
 
         // Wrong symbol
@@ -79,7 +80,7 @@ int main()
         case 'm': {
             float min_balance = bank[0];
             float max_balance = bank[0];
-            for(int i_number_of_bank_account = 1; i_number_of_bank_account<10; i_number_of_bank_account++){
+            for(int i_number_of_bank_account = 1; i_number_of_bank_account < 10; i_number_of_bank_account++){
                 if(bank[i_number_of_bank_account] < min_balance){
                     min_balance = bank[i_number_of_bank_account];
                 } else if(bank[i_number_of_bank_account] > max_balance){
@@ -94,7 +95,7 @@ int main()
         // Sum of all bank account's balances
         case 's':
             float full_balance;
-            for(int i_number_of_bank_account = 0; i_number_of_bank_account<10; i_number_of_bank_account++){
+            for(int i_number_of_bank_account = 0; i_number_of_bank_account < 10; i_number_of_bank_account++){
                 full_balance += bank[i_number_of_bank_account];
             }
             cout << "Sum of all bank account's balances is: " << full_balance << endl;

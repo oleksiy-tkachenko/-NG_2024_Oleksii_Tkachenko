@@ -3,7 +3,7 @@
 
 build
 
-*.txt
+
 *.txt.user
 
 # Compiled Object files

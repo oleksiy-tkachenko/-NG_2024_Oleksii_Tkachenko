@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Car Manager");
     m_cardVector = new std::vector<CarCard*>;
     Car *newCar = new Car(5000, EngineTypes::Electric, Colors::Silver, 4);
     Car *newCar1 = new Car(8000, EngineTypes::Diesel, Colors::Blue, 2);
